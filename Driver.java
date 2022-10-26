@@ -10,7 +10,8 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-		Character player = new Character();
+		Character player = Character.getInstance();
+		
 		int choice;
 		Scanner scan = new Scanner(System.in);
 		char cont = 'y';
