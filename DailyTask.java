@@ -2,6 +2,7 @@ package irlPackage;
 
 import java.util.Scanner;
 /*@Sean Steben
+Using the Template Pattern
 Daily Task is an abstract class that provides common functionality for it's child classes events. The template method provides a hook
 for the child classes to use. Each child class provides their own implementation of update as they will be updating different statistics*/
 public abstract class DailyTask {
