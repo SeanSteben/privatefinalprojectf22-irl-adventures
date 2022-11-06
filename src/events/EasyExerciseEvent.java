@@ -10,7 +10,7 @@ public class EasyExerciseEvent implements Event{
 		//System.out.print("Add scenario here");
 		if (isPassed()) {
 			System.out.println("Skillcheck Passed!");
-			//add level up method here.
+			player.levelUp();
 		} else {
 			System.out.println("Better luck next time.");
 		}
