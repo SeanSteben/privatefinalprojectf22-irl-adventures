@@ -11,6 +11,7 @@ package character;
 public class Character {
 
 	private static Character player;
+	private int level;
 	private int strength;
 	private int dexterity;
 	private int intelligence;
@@ -21,6 +22,7 @@ public class Character {
 
 	//Private constructor to ensure that only this class can create a Character.
 	private Character() {
+		level = 1;
 		strength = 10;
 		dexterity = 10;
 		intelligence = 10;
@@ -39,6 +41,8 @@ public class Character {
 	}
 
 	//Access methods that return the current value of each stat.
+	public int getLevel() {return level;}
+	
 	public int getStr() {return strength;}
 
 	public int getDex() {return dexterity;}
@@ -81,5 +85,9 @@ public class Character {
 
 	public void addKnd(int amt) {
 		kindness += amt;
+	}
+	
+	public void levelUp() {
+		level++;
 	}
 }
