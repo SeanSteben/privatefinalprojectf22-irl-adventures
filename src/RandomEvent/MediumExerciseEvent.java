@@ -1,7 +1,13 @@
 package RandomEvent;
 import character.Character;
 
-public class MediumExerciseEvent {
+/**
+ * One of three medium events, checks the character's strength, dexterity, and constitution variables to see if the character has high enough stats. If the skill check is passed, the character gains a level.
+ * @author Dylan
+ *
+ */
+
+public class MediumExerciseEvent implements Event{
 
 	Character player = Character.getInstance();
 	
@@ -15,7 +21,7 @@ public class MediumExerciseEvent {
 		}
 	}
 	
-	public boolean isPassed() {
+	private boolean isPassed() {
 		if (player.getStr() > 30 && player.getDex() > 30 && player.getCon() > 30) {
 			return true;
 		}

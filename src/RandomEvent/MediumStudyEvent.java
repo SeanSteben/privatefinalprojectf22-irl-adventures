@@ -1,7 +1,13 @@
 package RandomEvent;
 import character.Character;
 
-public class MediumStudyEvent {
+/**
+ * One of three medium events, checks the character's intelligence and wisdom variables to see if the character has high enough stats. If the skill check is passed, the character gains a level.
+ * @author Dylan
+ *
+ */
+
+public class MediumStudyEvent implements Event{
 
 	Character player = Character.getInstance();
 	
@@ -15,7 +21,7 @@ public class MediumStudyEvent {
 		}
 	}
 	
-	public boolean isPassed() {
+	private boolean isPassed() {
 		if (player.getIntel() > 30 && player.getWis() > 30) {
 			return true;
 		}

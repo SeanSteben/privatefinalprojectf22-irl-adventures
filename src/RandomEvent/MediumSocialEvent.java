@@ -1,7 +1,13 @@
 package RandomEvent;
 import character.Character;
 
-public class MediumSocialEvent {
+/**
+ * One of three medium events, checks character's charisma and kindness variables to see if the character has high enough stats. If the skill check is passed, the character gains a level.
+ * @author Dylan
+ *
+ */
+
+public class MediumSocialEvent implements Event{
 
 	Character player = Character.getInstance();
 	
@@ -15,7 +21,7 @@ public class MediumSocialEvent {
 		}
 	}
 	
-	public boolean isPassed() {
+	private boolean isPassed() {
 		if (player.getChr() > 30 && player.getKnd() > 30) {
 			return true;
 		}
