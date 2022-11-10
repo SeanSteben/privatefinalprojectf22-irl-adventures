@@ -1,5 +1,10 @@
 package RandomEvent;
 
+/**
+ * Creates one of three medium difficulty events depending on the integer passed into them.
+ * @author Dylan
+ *
+ */
 
 public class MediumEventFactory extends AbstractFactory{
 

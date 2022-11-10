@@ -1,5 +1,10 @@
 package RandomEvent;
 
+/**
+ * Creates one of three hard difficulty events depending on the integer passed into them.
+ * @author Dylan
+ *
+ */
 
 public class HardEventFactory extends AbstractFactory{
 

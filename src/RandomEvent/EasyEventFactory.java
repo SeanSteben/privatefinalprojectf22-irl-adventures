@@ -1,5 +1,11 @@
 package RandomEvent;
 
+/**
+ * Creates one of three easy difficulty events depending on the integer passed into them.
+ * @author Dylan
+ *
+ */
+
 public class EasyEventFactory extends AbstractFactory{
 	
 	public EasyEventFactory(int type) {
