@@ -1,6 +1,8 @@
-package irlPackage;
+package NormalDay;
+
+import character.Character;
+
 //@Sean Steben
-//Adds xp towards appropiate skills
 public class Study extends DailyTask {
 	public void updateChar(Character myPlayer)
 	{

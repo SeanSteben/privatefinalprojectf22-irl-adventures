@@ -1,21 +1,23 @@
-package irlPackage;
+package NormalDay;
+import irlPackage.*;
 import java.util.Scanner;
+import RandomEvent.RandomEvent;
+import character.Character;
 /**
+ * 
  * @author Sean Steben
- * Driver starts the program and provides a base to what the application will be doing as a whole
+ * Normal Day has the flow of the game in it's default state. Has the capability  of changing to another state
+ * or keeping state the  same
+ *
  */
-
-
-public class Driver {
-
-	public static void main(String[] args) {
-		
-		Character player = Character.getInstance();
+//Normal day State
+public class NormalDay implements DayState {
+	
+	 public void goAboutDay(Character player, PlayerDay state) {
 		
 		int choice;
 		Scanner scan = new Scanner(System.in);
-		char cont = 'y';
-		while(cont == 'y'){
+		
 			System.out.println("Your current stats: " + "\n" + 
 					"Strength: " + player.getStr() + "\n" +
 					"Dexterity: " + player.getDex() + "\n" +
@@ -27,27 +29,37 @@ public class Driver {
 			System.out.println("What activity would you like to do?"+ "\n" +
 					"1) Exercise" + "\n" +
 					"2) Study" + "\n" + 
-					"3) Socialize");
+					"3) Socialize" + "\n" +
+					"4) Trigger RandomEvent **TESTER TO CHANGE STATE** ");
 			choice = scan.nextInt();
 			if(choice == 1) {
 				Exercise ex = new Exercise();
-				ex.doActivity();ex.updateChar(player);
+				ex.doActivity(player);
 			}
 			if(choice == 2) {
 				Study st = new Study();
-				st.doActivity();st.updateChar(player);
+				st.doActivity(player);
 			}
 			if(choice == 3) {
 				Socialize soc = new Socialize();
-				soc.doActivity();soc.updateChar(player);
+				soc.doActivity(player);
 			}
 			
-			System.out.println("Continue?(y/n)");
-			cont = scan.next().charAt(0);
+			//tester for change into RandomEvent State
+			if(choice == 4)
+			{
+				System.out.println("Random Event Triggered");//tester text
+				RandomEvent rand = new RandomEvent();
+				//return rand;
+				
+				state.setState(rand);
+			}
+			else
+				state.setState(this);
 		
-		}
-		
-
 	}
 
+	
+
+	
 }

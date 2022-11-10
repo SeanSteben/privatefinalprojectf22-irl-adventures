@@ -1,8 +1,9 @@
-package irlPackage;
+package NormalDay;
 
 import java.util.Scanner;
+
+import character.Character;
 /*@Sean Steben
-Using the Template Pattern
 Daily Task is an abstract class that provides common functionality for it's child classes events. The template method provides a hook
 for the child classes to use. Each child class provides their own implementation of update as they will be updating different statistics*/
 public abstract class DailyTask {
@@ -25,10 +26,11 @@ public abstract class DailyTask {
 	 /*Each activity will update character stats differently so each activity will implement
 	  * their own version of updateChar*/
 	 abstract void updateChar(Character myPlayer);
-	 public void doActivity()//template method
+	 public void doActivity(Character myPlayer)//template method
 	 {
 		calcTime();
 		showResults();
+		updateChar(myPlayer);
 	 }
 	
 
