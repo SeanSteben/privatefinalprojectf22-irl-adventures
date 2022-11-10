@@ -7,10 +7,6 @@ package RandomEvent;
  */
 
 public class HardEventFactory extends AbstractFactory{
-
-	public HardEventFactory(int type) {
-		
-	}
 	
 	public Event getEvent(int type){
 		if (type == 0) {
