@@ -1,20 +1,21 @@
 package RandomEvent;
-import java.util.Random;
 
-
+/**
+ * Generates factories for the AbstractFactory class. The type of factory used
+ *  will be determined by the character's level, which is passed into the getFactory method.
+ * @author Dylan
+ *
+ */
 
 public class MakeEvent {
-
-	Random rand = new Random();
-	int type = rand.nextInt(3);
 	
-	public AbstractFactory getFactory(int level) {
+	public static AbstractFactory getFactory(int level) {
 		if(level < 10) {
-			return new EasyEventFactory(type);
+			return new EasyEventFactory();
 		} else if(level < 25) {
-			return new MediumEventFactory(type);
+			return new MediumEventFactory();
 		} else {
-			return new HardEventFactory(type);
+			return new HardEventFactory();
 		}
 	}
 }
