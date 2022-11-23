@@ -1,22 +1,21 @@
 package NormalDay;
 import irlPackage.*;
-import character.Character;
 import java.util.Scanner;
 import RandomEvent.RandomEvent;
+import character.Character;
 /**
  * 
  * @author Sean Steben
-   Normal is the state of which the character performs normally. They receive Normal XP  for completing tasks in this state
- *
+ * RelaxedDay is the state of which the character performs fresh and  relaxed. They receive bonus XP  for completing tasks in this state
  */
 
-public class NormalDay implements DayState {
+public class RelaxedDay implements DayState {
 	
 	 public void goAboutDay(Character player, PlayerDay state) {
-		int thisState = 2;
+		int thisState = 1;
 		int choice;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("This is a normal day!");
+			System.out.println("This is a relaxed day!");
 			System.out.println("Your current stats: " + "\n" + 
 					"Strength: " + player.getStr() + "\n" +
 					"Dexterity: " + player.getDex() + "\n" +
@@ -51,19 +50,9 @@ public class NormalDay implements DayState {
 				RandomEvent rand = new RandomEvent();
 				rand.startRand(player);
 				state.eventOccured();
-				//return rand;
-				
 				
 				
 			}
-			
-				
-		
-	}
-	 
-
-	
-	
-
-	
+	 }
 }
+

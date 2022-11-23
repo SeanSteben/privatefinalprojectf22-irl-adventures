@@ -57,6 +57,7 @@ public class Character {
 
 	public int getKnd() {return kindness;}
 
+<<<<<<< HEAD
 	public void setLevel(int lvl) {level = lvl;}
 	
 	public void setStr(int str) {strength = str;}
@@ -70,6 +71,9 @@ public class Character {
 	public void setChr(int chr) {charisma = chr;}
 	
 	public void setKnd(int knd) {kindness = knd;}
+=======
+
+>>>>>>> a78b1cb92a4d76a99101ef8216f7d40a99e61f8e
 	
 	//Adds a certain value to the current stat value.
 	public void addStr(int amt) {strength += amt;}
