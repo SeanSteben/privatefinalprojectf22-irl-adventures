@@ -87,6 +87,7 @@ public class Character {
 	
 	//Takes values from last saved Memento object and sets them as the current stats.
 	public void load(Memento lastSave) {
+		name = lastSave.getName();
 		level = lastSave.getLevel();
 		strength = lastSave.getStr();
 		dexterity = lastSave.getDex();
@@ -106,11 +107,13 @@ public class Character {
 	
 	protected class Memento{
 
+		private String name;
 		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness;
 		private Character player  = Character.getInstance();
 		
 		//Memento constructor that takes a copy
 		private Memento() {
+			this.name = player.getName();
 			this.level = player.getLevel();
 			this.strength = player.getStr();
 			this.intelligence = player.getIntel();
@@ -122,6 +125,8 @@ public class Character {
 		}
 		
 		//Accessor methods for the Memento object's stats
+		private String getName() {return name;}
+		
 		private int getLevel() {return level;}
 		
 		private int getStr() {return strength;}
