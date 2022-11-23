@@ -57,24 +57,6 @@ public class Character {
 
 	public int getKnd() {return kindness;}
 
-<<<<<<< HEAD
-	public void setLevel(int lvl) {level = lvl;}
-	
-	public void setStr(int str) {strength = str;}
-	
-	public void setDex(int dex) {dexterity = dex;}
-	
-	public void setIntel(int intel) {intelligence = intel;}
-	
-	public void setWis(int wis) {wisdom = wis;}
-	
-	public void setChr(int chr) {charisma = chr;}
-	
-	public void setKnd(int knd) {kindness = knd;}
-=======
-
->>>>>>> a78b1cb92a4d76a99101ef8216f7d40a99e61f8e
-	
 	//Adds a certain value to the current stat value.
 	public void addStr(int amt) {strength += amt;}
 
@@ -92,10 +74,12 @@ public class Character {
 	
 	public void levelUp() {level++;}
 	
+	//Creates a Memento object using the character's current stats .
 	public Memento save() {
 		return new Memento();
 	}
 	
+	//Takes values from last saved Memento object and sets them as the current stats.
 	public void load(Memento lastSave) {
 		level = lastSave.getLevel();
 		strength = lastSave.getStr();
@@ -106,11 +90,20 @@ public class Character {
 		charisma = lastSave.getChr();
 		kindness = lastSave.getKnd();
 	}
-	public class Memento{
-		
+
+	
+	/**
+	 * Memento class acts as a copy of the character class that can be stored and restored by the Caretaker class.
+	 * 
+	 * @author Dylan Fassio
+	 */
+	
+	protected class Memento{
+
 		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness;
 		private Character player  = Character.getInstance();
 		
+		//Memento constructor that takes a copy
 		private Memento() {
 			this.level = player.getLevel();
 			this.strength = player.getStr();
@@ -122,6 +115,7 @@ public class Character {
 			this.kindness = player.getKnd();
 		}
 		
+		//Accessor methods for the Memento object's stats
 		private int getLevel() {return level;}
 		
 		private int getStr() {return strength;}
