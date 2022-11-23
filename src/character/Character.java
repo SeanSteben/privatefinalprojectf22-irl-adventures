@@ -105,7 +105,7 @@ public class Character {
 	 * @author Dylan Fassio
 	 */
 	
-	protected class Memento{
+	class Memento{
 
 		private String name;
 		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness;
