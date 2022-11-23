@@ -1,13 +1,7 @@
 package RandomEvent;
 import character.Character;
 
-/**
- * One of three hard events, checks the character's strength, dexterity, and constitution variables to see if the character has high enough stats. If the skill check is passed, the character gains a level.
- * @author Dylan
- *
- */
-
-public class HardExerciseEvent implements Event{
+public class HardExerciseEvent {
 
 	Character player = Character.getInstance();
 	
@@ -21,7 +15,7 @@ public class HardExerciseEvent implements Event{
 		}
 	}
 	
-	private boolean isPassed() {
+	public boolean isPassed() {
 		if (player.getStr() > 50 && player.getDex() > 50 && player.getCon() > 50) {
 			return true;
 		}

@@ -1,11 +1,13 @@
 package irlPackage;
+import NormalDay.*;
 /**
  * 
  * @author Sean Steben
- * This observer receives word of the state change into a random event
+ * This observer receives word of when random events happen. Changes the character's State of day into
  *
  */
 public class RandomEventObserver extends Observer {
+	private int eventCount  = 0;
 	
 	public RandomEventObserver(PlayerDay day) {
 		this.day = day;
@@ -13,9 +15,21 @@ public class RandomEventObserver extends Observer {
 	}
 	@Override
 	public void update() {
-		System.out.println("Random Oberver knows state change");//tester text for validation
 		
-		day.getState();
+		eventCount++;
+		if(eventCount >2)
+		{
+			System.out.println("Random Oberver has changed day state");//tester text for validation
+			NormalDay norm = new NormalDay();
+			day.setState(norm);
+		}
+		if(eventCount > 4)
+		{
+			System.out.println("Random Oberver has changed day state");//tester text for validation
+			TiringDay tired = new TiringDay();
+			day.setState(tired);
+		}
+		
 	}
 
 }

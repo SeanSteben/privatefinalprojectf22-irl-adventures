@@ -12,6 +12,7 @@ public class Exercise extends DailyTask {
 		myPlayer.addDex(xp);
 		
 	}
+
 	
 	
 	

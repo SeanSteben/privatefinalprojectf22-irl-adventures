@@ -1,4 +1,5 @@
 package irlPackage;
+import NormalDay.*;
 import java.util.ArrayList;
 import java.util.List;
 import NormalDay.NormalDay;
@@ -16,22 +17,24 @@ import character.Character;
 public class PlayerDay {
 	
 	
-	private DayState state = new NormalDay();//default state is normal day
-	
+	private DayState state = new RelaxedDay();//default state is normal day
 	
 	private List<Observer> observers = new ArrayList<Observer>();//list for other observers. as of now there is only 1
-	
-	
+
 	public void doDay(Character player) {
 		
 		state.goAboutDay(player, this);
 	}
+	
 	public DayState getState() {//only needed when state make explicit calls back to here
 		return state;	 //will keep for now in case we change flow
 	}
+	public void eventOccured() {
+		notifyObservers();
+	}
 	public void setState(DayState state) {
 		this.state = state;
-		notifyObservers();
+		//notifyObservers();
 	}
 	
 	

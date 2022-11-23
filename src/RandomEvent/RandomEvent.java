@@ -9,9 +9,9 @@ import character.Character;
  * Random Event is a class the starter of a random obstacle that happens during the players day
  *
  */
-public class RandomEvent implements DayState {
+public class RandomEvent{
 
-	public void goAboutDay(Character player, PlayerDay state) {
+	public void startRand(Character player) {
 		
 		int level = player.getLevel();
 		Random rand = new Random();
@@ -19,15 +19,15 @@ public class RandomEvent implements DayState {
 		
 		System.out.println("A random event happened!");//tester output
 		
-		AbstractFactory eventFactory = MakeEvent.getFactory(level);
-		eventFactory.getEvent(type);
+		//AbstractFactory eventFactory = new AbstractFactory();
+		//eventFactory.getEvent(type);
 		
 		//right now day is cut short as it ends as randomEvent ends it
 		
 		
-		System.out.println("Changing back to normal state..");//tester output
-		NormalDay norm = new NormalDay();
-		state.setState(norm);
+		//System.out.println("Changing back to normal state..");//tester output
+		//NormalDay norm = new NormalDay();
+		//state.setState(norm);
 		
 	}
 	

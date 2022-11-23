@@ -6,17 +6,17 @@ import character.Character;
 /**
  * 
  * @author Sean Steben
-   Normal is the state of which the character performs normally. They receive Normal XP  for completing tasks in this state
+ * TiringDay is the state of which the character performs tired and exhausted. They receive less XP than normal  for completing tasks in this state
  *
  */
-
-public class NormalDay implements DayState {
+//Normal day State
+public class TiringDay implements DayState {
 	
 	 public void goAboutDay(Character player, PlayerDay state) {
-		int thisState = 2;
+		int thisState = 3;
 		int choice;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("This is a normal day!");
+			System.out.println("This is a tiring  day!");
 			System.out.println("Your current stats: " + "\n" + 
 					"Strength: " + player.getStr() + "\n" +
 					"Dexterity: " + player.getDex() + "\n" +
@@ -56,13 +56,9 @@ public class NormalDay implements DayState {
 				
 				
 			}
-			
-				
 		
 	}
-	 
 
-	
 	
 
 	

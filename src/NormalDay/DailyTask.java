@@ -1,4 +1,5 @@
 package NormalDay;
+import irlPackage.*;
 
 import java.util.Scanner;
 
@@ -8,13 +9,18 @@ Daily Task is an abstract class that provides common functionality for it's chil
 for the child classes to use. Each child class provides their own implementation of update as they will be updating different statistics*/
 public abstract class DailyTask {
 	protected int xp;
-	 protected void calcTime()
+	 protected void calcTime(int inputState)
 	 {
 		 int time;
 		System.out.println("How long would you like to this activity for?(in minutes)");
 		Scanner scan = new Scanner(System.in);
 		time = scan.nextInt();
-		xp = time / 10;//for every 10 minutes of activity, +1 in related stats
+		if(inputState == 1)
+			xp = time / 5;  //for every 10 minutes of activity, +1 in related stats
+		if(inputState == 2)
+			xp = time / 10;//for every 10 minutes of activity, +1 in related stats
+		if(inputState  ==  3)
+			xp = time / 15;//for every 15 minutes of activity, +1 in related stats
 		
 			
 	 }
@@ -26,9 +32,9 @@ public abstract class DailyTask {
 	 /*Each activity will update character stats differently so each activity will implement
 	  * their own version of updateChar*/
 	 abstract void updateChar(Character myPlayer);
-	 public void doActivity(Character myPlayer)//template method
+	 public void doActivity(Character myPlayer, int inputState)//template method
 	 {
-		calcTime();
+		calcTime(inputState);
 		showResults();
 		updateChar(myPlayer);
 	 }

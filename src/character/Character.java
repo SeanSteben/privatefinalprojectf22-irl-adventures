@@ -57,6 +57,7 @@ public class Character {
 
 	public int getKnd() {return kindness;}
 
+
 	
 	//Adds a certain value to the current stat value.
 	public void addStr(int amt) {

@@ -1,12 +1,5 @@
 package RandomEvent;
 import character.Character;
-
-/**
- * One of three easy events, checks character's charisma and kindness variables to see if the character has high enough stats. If the skill check is passed, the character gains a level.
- * @author Dylan
- *
- */
-
 public class EasySocialEvent implements Event{
 
 	Character player = Character.getInstance();
@@ -21,7 +14,7 @@ public class EasySocialEvent implements Event{
 		}
 	}
 	
-	private boolean isPassed() {
+	public boolean isPassed() {
 		if (player.getChr() > 20 && player.getKnd() > 20) {
 			return true;
 		}
