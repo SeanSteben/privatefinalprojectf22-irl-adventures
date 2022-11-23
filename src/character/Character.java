@@ -11,6 +11,7 @@ package character;
 public class Character {
 
 	private static Character player;
+	private String name;
 	private int level;
 	private int strength;
 	private int dexterity;
@@ -22,6 +23,7 @@ public class Character {
 
 	//Private constructor to ensure that only this class can create a Character.
 	private Character() {
+		name = null;
 		level = 1;
 		strength = 10;
 		dexterity = 10;
@@ -41,6 +43,8 @@ public class Character {
 	}
 
 	//Access methods that return the current value of each stat.
+	public String getName() {return name;}
+	
 	public int getLevel() {return level;}
 	
 	public int getStr() {return strength;}
@@ -58,6 +62,8 @@ public class Character {
 	public int getKnd() {return kindness;}
 
 	//Adds a certain value to the current stat value.
+	public void changeName(String newName) {name = newName;}
+	
 	public void addStr(int amt) {strength += amt;}
 
 	public void addDex(int amt) {dexterity += amt;}
