@@ -1,5 +1,6 @@
 package RandomEvent;
 import java.util.Random;
+
 import irlPackage.*;
 import NormalDay.*;
 import character.Character;
