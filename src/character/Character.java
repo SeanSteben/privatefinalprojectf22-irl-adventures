@@ -11,6 +11,7 @@ package character;
 public class Character {
 
 	private static Character player;
+	private String name;
 	private int level;
 	private int strength;
 	private int dexterity;
@@ -22,6 +23,7 @@ public class Character {
 
 	//Private constructor to ensure that only this class can create a Character.
 	private Character() {
+		name = null;
 		level = 1;
 		strength = 10;
 		dexterity = 10;
@@ -41,6 +43,8 @@ public class Character {
 	}
 
 	//Access methods that return the current value of each stat.
+	public String getName() {return name;}
+	
 	public int getLevel() {return level;}
 	
 	public int getStr() {return strength;}
@@ -57,37 +61,87 @@ public class Character {
 
 	public int getKnd() {return kindness;}
 
-	
 	//Adds a certain value to the current stat value.
-	public void addStr(int amt) {
-		strength += amt;
-	}
+	public void changeName(String newName) {name = newName;}
+	
+	public void addStr(int amt) {strength += amt;}
 
-	public void addDex(int amt) {
-		dexterity += amt;
-	}
+	public void addDex(int amt) {dexterity += amt;}
 
-	public void addIntel(int amt) {
-		intelligence += amt;
-	}
+	public void addIntel(int amt) {intelligence += amt;}
 
-	public void addWis(int amt) {
-		wisdom += amt;
-	}
+	public void addWis(int amt) {wisdom += amt;}
 
-	public void addChr(int amt) {
-		charisma += amt;
-	}
+	public void addChr(int amt) {charisma += amt;}
 
-	public void addCon(int amt) {
-		constitution += amt;
-	}
+	public void addCon(int amt) {constitution += amt;}
 
-	public void addKnd(int amt) {
-		kindness += amt;
+	public void addKnd(int amt) {kindness += amt;}
+	
+	public void levelUp() {level++;}
+	
+	//Creates a Memento object using the character's current stats .
+	public Memento save() {
+		return new Memento();
 	}
 	
-	public void levelUp() {
-		level++;
+	//Takes values from last saved Memento object and sets them as the current stats.
+	public void load(Memento lastSave) {
+		name = lastSave.getName();
+		level = lastSave.getLevel();
+		strength = lastSave.getStr();
+		dexterity = lastSave.getDex();
+		intelligence = lastSave.getIntel();
+		constitution = lastSave.getCon();
+		wisdom = lastSave.getWis();
+		charisma = lastSave.getChr();
+		kindness = lastSave.getKnd();
+	}
+
+	
+	/**
+	 * Memento class acts as a copy of the character class that can be stored and restored by the Caretaker class.
+	 * 
+	 * @author Dylan Fassio
+	 */
+	
+	class Memento{
+
+		private String name;
+		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness;
+		private Character player  = Character.getInstance();
+		
+		//Memento constructor that takes a copy of the current character stats
+		private Memento() {
+			this.name = player.getName();
+			this.level = player.getLevel();
+			this.strength = player.getStr();
+			this.intelligence = player.getIntel();
+			this.dexterity = player.getDex();
+			this.constitution = player.getCon();
+			this.wisdom = player.getWis();
+			this.charisma = player.getChr();
+			this.kindness = player.getKnd();
+		}
+		
+		//Accessor methods for the Memento object's stats
+		private String getName() {return name;}
+		
+		private int getLevel() {return level;}
+		
+		private int getStr() {return strength;}
+		
+		private int getDex() {return dexterity;}
+		
+		private int getIntel() {return intelligence;}
+		
+		private int getWis() {return wisdom;}
+		
+		private int getChr() {return charisma;}
+		
+		private int getCon() {return constitution;}
+		
+		private int getKnd() {return kindness;}
+		
 	}
 }

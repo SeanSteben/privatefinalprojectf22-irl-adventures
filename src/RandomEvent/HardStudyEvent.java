@@ -1,13 +1,7 @@
 package RandomEvent;
 import character.Character;
 
-/**
- * One of three hard events, checks the character's intelligence and wisdom variables to see if the character has high enough stats. If the skill check is passed, the character gains a level.
- * @author Dylan
- *
- */
-
-public class HardStudyEvent implements Event{
+public class HardStudyEvent {
 
 	Character player = Character.getInstance();
 	
@@ -21,7 +15,7 @@ public class HardStudyEvent implements Event{
 		}
 	}
 	
-	private boolean isPassed() {
+	public boolean isPassed() {
 		if (player.getIntel() > 50 && player.getWis() > 50) {
 			return true;
 		}

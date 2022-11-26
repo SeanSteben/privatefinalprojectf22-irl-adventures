@@ -1,5 +1,7 @@
 package irlPackage;
+
 import character.Character;
+
 /**
  * DaySate provides blueprint for potential states the game could be in
  * @author Sean Steben
