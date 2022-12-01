@@ -111,7 +111,7 @@ public class Character {
 		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness;
 		private Character player  = Character.getInstance();
 		
-		//Memento constructor that takes a copy
+		//Memento constructor that takes a copy of the current character stats
 		private Memento() {
 			this.name = player.getName();
 			this.level = player.getLevel();
