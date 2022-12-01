@@ -3,7 +3,7 @@ package RandomEvent;
 
 public class HardEventFactory extends AbstractFactory{
 
-	public HardEventFactory(int type) {
+	public HardEventFactory() {
 		
 	}
 	

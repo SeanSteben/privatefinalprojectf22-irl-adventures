@@ -20,8 +20,14 @@ public class RandomEvent{
 		
 		System.out.println("A random event happened!");//tester output
 		
-		//AbstractFactory eventFactory = new AbstractFactory();
-		//eventFactory.getEvent(type);
+		AbstractFactory eventFactory;
+		try {
+			eventFactory = MakeEvent.getFactory(level);
+			eventFactory.getEvent(type);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		
 		//right now day is cut short as it ends as randomEvent ends it
 		

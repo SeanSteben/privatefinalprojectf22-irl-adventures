@@ -3,7 +3,7 @@ package RandomEvent;
 
 public class MediumEventFactory extends AbstractFactory{
 
-	public MediumEventFactory(int type) {
+	public MediumEventFactory(){
 		
 	}
 	

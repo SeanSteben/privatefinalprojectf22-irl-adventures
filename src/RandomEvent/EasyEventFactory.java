@@ -2,7 +2,7 @@ package RandomEvent;
 
 public class EasyEventFactory extends AbstractFactory{
 	
-	public EasyEventFactory(int type) {
+	public EasyEventFactory() {
 		
 	}
 	
