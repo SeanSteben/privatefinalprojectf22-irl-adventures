@@ -1,7 +1,7 @@
 package RandomEvent;
 import character.Character;
 
-public class MediumStudyEvent {
+public class MediumStudyEvent implements Event{
 
 	Character player = Character.getInstance();
 	
