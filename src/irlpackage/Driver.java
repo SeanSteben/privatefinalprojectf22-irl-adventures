@@ -1,4 +1,4 @@
-package irlPackage;
+package irlpackage;
 import java.util.Scanner;
 
 import character.Character;

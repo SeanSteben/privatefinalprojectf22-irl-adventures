@@ -1,4 +1,4 @@
-package irlPackage;
+package irlpackage;
 /**
  * @author Sean Steben
  * Observer is an abstract class to provide blueprint for any observers

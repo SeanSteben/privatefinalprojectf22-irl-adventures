@@ -1,5 +1,5 @@
-package irlPackage;
-import NormalDay.*;
+package irlpackage;
+import normalday.*;
 /**
  * 
  * @author Sean Steben

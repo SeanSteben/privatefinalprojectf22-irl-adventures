@@ -1,9 +1,9 @@
-package irlPackage;
-import NormalDay.*;
+package irlpackage;
 import java.util.ArrayList;
 import java.util.List;
-import NormalDay.NormalDay;
+
 import character.Character;
+import normalday.*;
 
 /**
  * 
