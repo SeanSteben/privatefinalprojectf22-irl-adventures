@@ -6,4 +6,5 @@
  *
  */
 module IRLAdventures {
+	requires java.desktop;
 }
