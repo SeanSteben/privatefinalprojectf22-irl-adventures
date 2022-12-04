@@ -42,11 +42,6 @@ public class Character {
 		return player;
 	}
 	
-	public String toString() {
-		return (name + "\t" + level + "\t" + strength + "\t" + dexterity + "\t" + intelligence +
-				"\t" + wisdom + "\t" + charisma + "\t" + constitution + "\t" + "kindess");
-	}
-
 	//Access methods that return the current value of each stat.
 	public String getName() {return name;}
 	
@@ -126,6 +121,11 @@ public class Character {
 			this.wisdom = player.getWis();
 			this.charisma = player.getChr();
 			this.kindness = player.getKnd();
+		}
+		
+		public String toString() {
+			return (name + "\t" + level + "\t" + strength + "\t" + dexterity + "\t" + intelligence +
+					"\t" + wisdom + "\t" + charisma + "\t" + constitution + "\t" + "kindess");
 		}
 		
 		//Accessor methods for the Memento object's stats
