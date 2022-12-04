@@ -1,5 +1,7 @@
 package character;
 
+import java.util.StringTokenizer;
+
 /**
  * The Character class creates a player character and store's its stats along with methods that access
  * those stats and add to their values. This class implements the Singleton design pattern to ensure
@@ -86,16 +88,18 @@ public class Character {
 	}
 	
 	//Takes values from last saved Memento object and sets them as the current stats.
-	public void load(Memento lastSave) {
-		name = lastSave.getName();
-		level = lastSave.getLevel();
-		strength = lastSave.getStr();
-		dexterity = lastSave.getDex();
-		intelligence = lastSave.getIntel();
-		constitution = lastSave.getCon();
-		wisdom = lastSave.getWis();
-		charisma = lastSave.getChr();
-		kindness = lastSave.getKnd();
+	public void load(String data) {
+		String s[] = data.split("\t");
+		
+		name = s[0];
+		level = Integer.parseInt(s[1]);
+		strength = Integer.parseInt(s[2]);
+		dexterity = Integer.parseInt(s[3]);
+		intelligence = Integer.parseInt(s[4]);
+		constitution = Integer.parseInt(s[5]);
+		wisdom = Integer.parseInt(s[6]);
+		charisma = Integer.parseInt(s[7]);
+		kindness = Integer.parseInt(s[8]);
 	}
 
 	
