@@ -19,13 +19,13 @@ public class RandomEventObserver extends Observer {
 		eventCount++;
 		if(eventCount >2)
 		{
-			System.out.println("Random Oberver has changed day state");//tester text for validation
+			System.out.println("You're not as relaxed as you were...");//tester text for validation
 			NormalDay norm = new NormalDay();
 			day.setState(norm);
 		}
 		if(eventCount > 4)
 		{
-			System.out.println("Random Oberver has changed day state");//tester text for validation
+			System.out.println("A lot has happened today! You're now exhausted!");//tester text for validation
 			TiringDay tired = new TiringDay();
 			day.setState(tired);
 		}
