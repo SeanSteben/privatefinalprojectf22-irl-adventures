@@ -148,7 +148,7 @@ public class Character {
 		
 		public String toString() {
 			return (name + "\t" + level + "\t" + strength + "\t" + dexterity + "\t" + intelligence +
-					"\t" + constitution + "\t" + wisdom + "\t" + charisma + "\t" + kindness);
+					"\t" + constitution + "\t" + wisdom + "\t" + charisma + "\t" + kindness + "\t" + time);
 		}
 
 		

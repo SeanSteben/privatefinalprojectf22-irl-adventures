@@ -17,7 +17,7 @@ public class Caretaker {
 
 	static Memento lastSave;
 	Character player = Character.getInstance();
-	File save = new File("saveData.txt");
+	File save = new File("SaveData.txt");
 	
 	public Caretaker() {
 		
@@ -29,7 +29,7 @@ public class Caretaker {
 		lastSave = player.save();
 		
 		try {
-			FileWriter saver = new FileWriter("saveData.txt");
+			FileWriter saver = new FileWriter("SaveData.txt");
 			saver.write(lastSave.toString());
 			saver.close();
 			System.out.println("Character successfully saved!"); //integrate with UI
