@@ -1,5 +1,5 @@
-package NormalDay;
-import irlPackage.*;
+package normalday;
+import irlpackage.*;
 
 import java.util.Scanner;
 
