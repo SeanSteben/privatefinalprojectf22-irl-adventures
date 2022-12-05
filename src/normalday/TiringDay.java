@@ -3,6 +3,7 @@ import irlpackage.*;
 import randomevent.RandomEvent;
 import java.util.Scanner;
 import character.Character;
+import java.util.Random;
 /**
  * 
  * @author Sean Steben
