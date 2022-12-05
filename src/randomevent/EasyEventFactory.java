@@ -1,4 +1,4 @@
-package RandomEvent;
+package randomevent;
 
 public class EasyEventFactory extends AbstractFactory{
 	

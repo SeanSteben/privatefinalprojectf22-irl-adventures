@@ -1,4 +1,4 @@
-package RandomEvent;
+package randomevent;
 
 
 public abstract class AbstractFactory {

@@ -1,5 +1,4 @@
-package RandomEvent;
-
+package randomevent;
 
 public class HardEventFactory extends AbstractFactory{
 
