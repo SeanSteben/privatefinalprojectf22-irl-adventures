@@ -1,4 +1,4 @@
-package RandomEvent;
+package randomevent;
 import character.Character;
 
 public class EasyStudyEvent implements Event{
@@ -6,12 +6,12 @@ public class EasyStudyEvent implements Event{
 	Character player = Character.getInstance();
 	
 	public void skillCheck() {
-		//System.out.print("Add scenario here");
+		System.out.print("You forgot about an assignment due tomorrow. Get it done quick!");
 		if (isPassed()) {
-			System.out.println("Skillcheck Passed!");
+			System.out.println("Skillcheck Passed! You level up!");
 			player.levelUp();
 		} else {
-			System.out.println("Better luck next time.");
+			System.out.println("Skill check failed :( Better luck next time.\n");
 		}
 	}
 	

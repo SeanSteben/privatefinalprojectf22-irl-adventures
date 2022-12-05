@@ -1,4 +1,4 @@
-package RandomEvent;
+package randomevent;
 import character.Character;
 
 public class HardExerciseEvent implements Event{
@@ -6,12 +6,12 @@ public class HardExerciseEvent implements Event{
 	Character player = Character.getInstance();
 	
 	public void skillCheck() {
-		//System.out.print("Add scenario here");
+		System.out.println("You are stranded in the wilderness after a plane crash. Fight off bears to survive!");
 		if (isPassed()) {
-			System.out.println("Skillcheck Passed!");
+			System.out.println("Skillcheck Passed! You level up!");
 			player.levelUp();
 		} else {
-			System.out.println("Better luck next time.");
+			System.out.println("Skill check failed :( Better luck next time.\n");
 		}
 	}
 	

@@ -23,12 +23,12 @@ public class RandomEvent{
 		AbstractFactory eventFactory;
 		try {
 			eventFactory = MakeEvent.getFactory(level);
-			eventFactory.getEvent(type);
+			Event event = eventFactory.getEvent(type);
+			event.skillCheck();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
-	
 
 }

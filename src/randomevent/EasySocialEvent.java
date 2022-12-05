@@ -1,16 +1,16 @@
-package RandomEvent;
+package randomevent;
 import character.Character;
 public class EasySocialEvent implements Event{
 
 	Character player = Character.getInstance();
 	
 	public void skillCheck() {
-		//System.out.print("Add scenario here");
+		System.out.println("You are meeting a mutual friend for the first time. Make a good impression!");
 		if (isPassed()) {
-			System.out.println("Skillcheck Passed!");
+			System.out.println("Skillcheck Passed! You level up!");
 			player.levelUp();
 		} else {
-			System.out.println("Better luck next time.");
+			System.out.println("Skill check failed :( Better luck next time.\n");
 		}
 	}
 	
