@@ -15,15 +15,21 @@ import java.util.Scanner;
  */
 public class Caretaker {
 
-	Memento lastSave;
+	static Memento lastSave;
 	Character player = Character.getInstance();
+	File save = new File("saveData.txt");
 	
+	public Caretaker() {
+		
+	}
+
 	//sets the local Memento object to the most recent version of the character.
-	public void save() {
+	public void saveToFile() {
+		
 		lastSave = player.save();
 		
 		try {
-			FileWriter saver = new FileWriter("SaveData.txt");
+			FileWriter saver = new FileWriter("saveData.txt");
 			saver.write(lastSave.toString());
 			saver.close();
 			System.out.println("Character successfully saved!"); //integrate with UI
@@ -34,10 +40,9 @@ public class Caretaker {
 	}
 	
 	//returns the stored Memento object
-	public void load() {
+	public void loadFromFile() {
 		
 		try {
-			File save = new File("SaveData.txt");
 			Scanner loader = new Scanner(save);
 			String saveData = loader.nextLine();
 			loader.close();
@@ -50,5 +55,10 @@ public class Caretaker {
 
 	}
 	
-	
+	public boolean isFirstGame() {
+		if (save.length() == 0) {
+			return true;
+		}
+		return false;
+	}
 }

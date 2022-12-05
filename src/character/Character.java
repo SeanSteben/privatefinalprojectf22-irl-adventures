@@ -1,7 +1,5 @@
 package character;
 
-import java.util.StringTokenizer;
-
 /**
  * The Character class creates a player character and store's its stats along with methods that access
  * those stats and add to their values. This class implements the Singleton design pattern to ensure
@@ -23,6 +21,7 @@ public class Character {
 	private int constitution;
 	private int kindness;
 
+
 	//Private constructor to ensure that only this class can create a Character.
 	private Character() {
 		name = null;
@@ -38,8 +37,14 @@ public class Character {
 
 	//Allows other classes to interact with single Character, creates one if it doesn't already exist.
 	public static Character getInstance() {
+
+		
 		if (player == null) {
 			player = new Character();
+			Caretaker ct = new Caretaker();
+			if (ct.isFirstGame()) {
+				Login.firstLogin();
+			}
 		}
 		return player;
 	}
@@ -89,7 +94,9 @@ public class Character {
 	
 	//Takes values from last saved Memento object and sets them as the current stats.
 	public void load(String data) {
-		String s[] = data.split("\t");
+		System.out.println(data);
+		
+		String s[] = data.split("\t", 9);
 		
 		name = s[0];
 		level = Integer.parseInt(s[1]);
@@ -129,27 +136,8 @@ public class Character {
 		
 		public String toString() {
 			return (name + "\t" + level + "\t" + strength + "\t" + dexterity + "\t" + intelligence +
-					"\t" + wisdom + "\t" + charisma + "\t" + constitution + "\t" + "kindess");
+					"\t" + constitution + "\t" + wisdom + "\t" + charisma + "\t" + kindness);
 		}
-		
-		//Accessor methods for the Memento object's stats
-		private String getName() {return name;}
-		
-		private int getLevel() {return level;}
-		
-		private int getStr() {return strength;}
-		
-		private int getDex() {return dexterity;}
-		
-		private int getIntel() {return intelligence;}
-		
-		private int getWis() {return wisdom;}
-		
-		private int getChr() {return charisma;}
-		
-		private int getCon() {return constitution;}
-		
-		private int getKnd() {return kindness;}
 		
 	}
 }
