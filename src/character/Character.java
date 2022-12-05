@@ -22,7 +22,8 @@ public class Character {
 	private int charisma;
 	private int constitution;
 	private int kindness;
-
+	private int time;
+	
 	//Private constructor to ensure that only this class can create a Character.
 	private Character() {
 		name = null;
@@ -34,6 +35,7 @@ public class Character {
 		charisma = 10;
 		constitution = 10;
 		kindness = 10;
+		time = 480;//8 hours in minutes
 	}
 
 	//Allows other classes to interact with single Character, creates one if it doesn't already exist.
@@ -62,6 +64,8 @@ public class Character {
 	public int getCon() {return constitution;}
 
 	public int getKnd() {return kindness;}
+	
+	public int getTime() {return time;}
 
 	//Adds a certain value to the current stat value.
 	public void changeName(String newName) {name = newName;}
@@ -80,7 +84,15 @@ public class Character {
 
 	public void addKnd(int amt) {kindness += amt;}
 	
+	public void removeTime(int inTime) {
+		time -= inTime;
+	}
+	public void resetTime(){
+		time =  480;
+	}
+	
 	public void levelUp() {level++;}
+	
 	
 	//Creates a Memento object using the character's current stats .
 	public Memento save() {
@@ -100,6 +112,7 @@ public class Character {
 		wisdom = Integer.parseInt(s[6]);
 		charisma = Integer.parseInt(s[7]);
 		kindness = Integer.parseInt(s[8]);
+		time = Integer.parseInt(s[9]);
 	}
 
 	
@@ -125,6 +138,7 @@ public class Character {
 			this.wisdom = player.getWis();
 			this.charisma = player.getChr();
 			this.kindness = player.getKnd();
+			this.time = player.getTime();
 		}
 		
 		public String toString() {
@@ -150,6 +164,8 @@ public class Character {
 		private int getCon() {return constitution;}
 		
 		private int getKnd() {return kindness;}
+		
+		private int getTime() {return time;}
 		
 	}
 }
