@@ -1,8 +1,8 @@
-package RandomEvent;
+package randomevent;
 import java.util.Random;
 
-import irlPackage.*;
-import NormalDay.*;
+import irlpackage.*;
+import normalday.*;
 import character.Character;
 /**
  * 
