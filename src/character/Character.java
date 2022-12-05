@@ -20,13 +20,11 @@ public class Character {
 	private int charisma;
 	private int constitution;
 	private int kindness;
-<<<<<<< HEAD
 
 
-=======
+
 	private int time;
 	
->>>>>>> 3bf56672af062d1a487cf2cb938bfaf64e6b84f2
 	//Private constructor to ensure that only this class can create a Character.
 	private Character() {
 		name = null;
@@ -112,7 +110,7 @@ public class Character {
 	public void load(String data) {
 		System.out.println(data);
 		
-		String s[] = data.split("\t", 9);
+		String s[] = data.split("\t");
 		
 		name = s[0];
 		level = Integer.parseInt(s[1]);
@@ -136,7 +134,7 @@ public class Character {
 	class Memento{
 
 		private String name;
-		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness;
+		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness, time;
 		
 		//Memento constructor that takes a copy of the current character stats
 		private Memento() {
@@ -157,26 +155,6 @@ public class Character {
 					"\t" + constitution + "\t" + wisdom + "\t" + charisma + "\t" + kindness);
 		}
 
-		//Accessor methods for the Memento object's stats
-		private String getName() {return name;}
-		
-		private int getLevel() {return level;}
-		
-		private int getStr() {return strength;}
-		
-		private int getDex() {return dexterity;}
-		
-		private int getIntel() {return intelligence;}
-		
-		private int getWis() {return wisdom;}
-		
-		private int getChr() {return charisma;}
-		
-		private int getCon() {return constitution;}
-		
-		private int getKnd() {return kindness;}
-		
-		private int getTime() {return time;}
-		
+
 	}
 }
