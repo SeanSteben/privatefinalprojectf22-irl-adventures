@@ -1,4 +1,4 @@
-package NormalDay;
+package normalday;
 
 import character.Character;
 
