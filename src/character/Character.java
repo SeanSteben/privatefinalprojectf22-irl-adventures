@@ -45,10 +45,6 @@ public class Character {
 		
 		if (player == null) {
 			player = new Character();
-			Caretaker ct = new Caretaker();
-			if (ct.isFirstGame()) {
-				Login.firstLogin();
-			}
 		}
 		return player;
 	}
@@ -155,6 +151,6 @@ public class Character {
 					"\t" + constitution + "\t" + wisdom + "\t" + charisma + "\t" + kindness);
 		}
 
-
+		
 	}
 }
