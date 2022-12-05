@@ -5,7 +5,6 @@ import character.Character;
 /**
  * @author Sean Steben
  * Driver creates grabs an instance of player, creates a new instance of day and an observer
- * Continues as long as user wants
  */
 
 
@@ -17,21 +16,32 @@ public class Driver {
 		PlayerDay myDay = new PlayerDay();
 		new RandomEventObserver(myDay);
 		Scanner scan = new Scanner(System.in);
-		//right now first call is normal day state
-		
-		//keep going about day until end 
-		//myDay.doDay(player);//right now second call is random event state
-		
-		char cont = 'y';
-		while(cont == 'y'){
+		int dayCount;
+		System.out.println("Hello! Welcome to IRL Adventures!  \n" + 
+							"Please enter game length(in days)");
+		dayCount = scan.nextInt();
+		for(int i = 1; i <= dayCount; i++)
+		{
+			char cont = 'y', saveChoice = 'y';
+			while(cont == 'y' && player.getTime()!= 0){
 			
-			myDay.doDay(player);
-		
-			System.out.println("Continue?(y/n)");
-			cont = scan.next().charAt(0);
+				myDay.goAboutDay(player);
+
+				System.out.println("Continue(y/n)" );
+				cont = scan.next().charAt(0);
+			}//end of day here
+			player.resetTime();
+			System.out.println("You've reached the end of the day!");
+			System.out.println("Would you like to save? (y/n)");
+			saveChoice = scan.next().charAt(0);
+			if(saveChoice == 'y')
+			{
+				System.out.println("Saved!");
+				//Dylan, recommend starting save sale file option here
+			}
 			
-		}
-		
+		}//end of game here
+		System.out.println("You've reached the end of the game!");
 		
 
 	}
