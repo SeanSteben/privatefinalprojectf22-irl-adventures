@@ -28,14 +28,6 @@ public class Driver {
 		PlayerDay myDay = new PlayerDay();
 		new RandomEventObserver(myDay);
 
-		//right now first call is normal day state
-		
-		//keep going about day until end 
-		myDay.doDay(player);//right now second call is random event state
-		
-		char cont = 'y';
-		while(cont == 'y'){
-		Scanner scan = new Scanner(System.in);
 		int dayCount;
 		System.out.println("Hello! Welcome to IRL Adventures!  \n" + 
 							"Please enter game length(in days)");
@@ -56,15 +48,12 @@ public class Driver {
 			saveChoice = scan.next().charAt(0);
 			if(saveChoice == 'y')
 			{
-				System.out.println("Saved!");
-				//Dylan, recommend starting save sale file option here
+				player.save();
+				ct.saveToFile();
 			}
 			
 		}//end of game here
 		System.out.println("You've reached the end of the game!");
-		
-		player.save();
-		ct.saveToFile();
 
 	}
 
