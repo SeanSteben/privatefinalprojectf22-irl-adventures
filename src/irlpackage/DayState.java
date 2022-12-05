@@ -11,7 +11,7 @@ public interface DayState {
 	
 	
 
-	 public void goAboutDay(Character player, PlayerDay state);
+	public void goAboutDay(Character player, PlayerDay currentDay);
 	
 	
 

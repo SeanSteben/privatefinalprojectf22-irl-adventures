@@ -20,8 +20,13 @@ public class Character {
 	private int charisma;
 	private int constitution;
 	private int kindness;
+<<<<<<< HEAD
 
 
+=======
+	private int time;
+	
+>>>>>>> 3bf56672af062d1a487cf2cb938bfaf64e6b84f2
 	//Private constructor to ensure that only this class can create a Character.
 	private Character() {
 		name = null;
@@ -33,6 +38,7 @@ public class Character {
 		charisma = 10;
 		constitution = 10;
 		kindness = 10;
+		time = 480;//8 hours in minutes
 	}
 
 	//Allows other classes to interact with single Character, creates one if it doesn't already exist.
@@ -67,6 +73,8 @@ public class Character {
 	public int getCon() {return constitution;}
 
 	public int getKnd() {return kindness;}
+	
+	public int getTime() {return time;}
 
 	//Adds a certain value to the current stat value.
 	public void changeName(String newName) {name = newName;}
@@ -85,7 +93,15 @@ public class Character {
 
 	public void addKnd(int amt) {kindness += amt;}
 	
+	public void removeTime(int inTime) {
+		time -= inTime;
+	}
+	public void resetTime(){
+		time =  480;
+	}
+	
 	public void levelUp() {level++;}
+	
 	
 	//Creates a Memento object using the character's current stats .
 	public Memento save() {
@@ -107,6 +123,7 @@ public class Character {
 		wisdom = Integer.parseInt(s[6]);
 		charisma = Integer.parseInt(s[7]);
 		kindness = Integer.parseInt(s[8]);
+		time = Integer.parseInt(s[9]);
 	}
 
 	
@@ -132,12 +149,34 @@ public class Character {
 			this.wisdom = player.getWis();
 			this.charisma = player.getChr();
 			this.kindness = player.getKnd();
+			this.time = player.getTime();
 		}
 		
 		public String toString() {
 			return (name + "\t" + level + "\t" + strength + "\t" + dexterity + "\t" + intelligence +
 					"\t" + constitution + "\t" + wisdom + "\t" + charisma + "\t" + kindness);
 		}
+
+		//Accessor methods for the Memento object's stats
+		private String getName() {return name;}
+		
+		private int getLevel() {return level;}
+		
+		private int getStr() {return strength;}
+		
+		private int getDex() {return dexterity;}
+		
+		private int getIntel() {return intelligence;}
+		
+		private int getWis() {return wisdom;}
+		
+		private int getChr() {return charisma;}
+		
+		private int getCon() {return constitution;}
+		
+		private int getKnd() {return kindness;}
+		
+		private int getTime() {return time;}
 		
 	}
 }

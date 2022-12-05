@@ -28,14 +28,6 @@ public class RandomEvent{
 			e.printStackTrace();
 		}
 
-		
-		//right now day is cut short as it ends as randomEvent ends it
-		
-		
-		//System.out.println("Changing back to normal state..");//tester output
-		//NormalDay norm = new NormalDay();
-		//state.setState(norm);
-		
 	}
 	
 

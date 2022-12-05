@@ -6,7 +6,6 @@ import character.Caretaker;
 /**
  * @author Sean Steben
  * Driver creates grabs an instance of player, creates a new instance of day and an observer
- * Continues as long as user wants
  */
 
 
@@ -36,14 +35,33 @@ public class Driver {
 		
 		char cont = 'y';
 		while(cont == 'y'){
+		Scanner scan = new Scanner(System.in);
+		int dayCount;
+		System.out.println("Hello! Welcome to IRL Adventures!  \n" + 
+							"Please enter game length(in days)");
+		dayCount = scan.nextInt();
+		for(int i = 1; i <= dayCount; i++)
+		{
+			char cont = 'y', saveChoice = 'y';
+			while(cont == 'y' && player.getTime()!= 0){
 			
-			myDay.doDay(player);
-		
-			System.out.println("Continue?(y/n)");
-			cont = scan.next().charAt(0);
+				myDay.goAboutDay(player);
+
+				System.out.println("Continue(y/n)" );
+				cont = scan.next().charAt(0);
+			}//end of day here
+			player.resetTime();
+			System.out.println("You've reached the end of the day!");
+			System.out.println("Would you like to save? (y/n)");
+			saveChoice = scan.next().charAt(0);
+			if(saveChoice == 'y')
+			{
+				System.out.println("Saved!");
+				//Dylan, recommend starting save sale file option here
+			}
 			
-		}
-		
+		}//end of game here
+		System.out.println("You've reached the end of the game!");
 		
 		player.save();
 		ct.saveToFile();
