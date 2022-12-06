@@ -120,27 +120,27 @@ public class CharacterScreen extends JFrame{
 				stat_info.list.add(constitution_button);
 				stat_info.list.add(kindness_button);
 				strength_button.setBackground(Color.RED);
-				strength_button.addActionListener(new buttonListener());
+				strength_button.addActionListener(new ButtonListener());
 				strength_button.setBackground(new Color(212,175,55)); 
 				strength_button.setForeground(new Color(146,0,10));
 				dexterity_button.setBackground(new Color(212,175,55));
 				dexterity_button.setForeground(new Color(146,0,10));
-				dexterity_button.addActionListener(new buttonListener());
+				dexterity_button.addActionListener(new ButtonListener());
 				intelligence_button.setBackground(new Color(212,175,55));// Gold(metallic)
 				intelligence_button.setForeground(new Color(146,0,10)); // Dark Blood
-				intelligence_button.addActionListener(new buttonListener());
+				intelligence_button.addActionListener(new ButtonListener());
 				wisdom_button.setBackground(new Color(212,175,55));
 				wisdom_button.setForeground(new Color(146,0,10));
-				wisdom_button.addActionListener(new buttonListener());
+				wisdom_button.addActionListener(new ButtonListener());
 				charisma_button.setBackground(new Color(212,175,55));
 				charisma_button.setForeground(new Color(146,0,10));
-				charisma_button.addActionListener(new buttonListener());
+				charisma_button.addActionListener(new ButtonListener());
 				constitution_button.setBackground(new Color(212,175,55));
 				constitution_button.setForeground(new Color(146,0,10));
-				constitution_button.addActionListener(new buttonListener());
+				constitution_button.addActionListener(new ButtonListener());
 				kindness_button.setBackground(new Color(212,175,55));
 				kindness_button.setForeground(new Color(146,0,10));
-				kindness_button.addActionListener(new buttonListener());
+				kindness_button.addActionListener(new ButtonListener());
 				stat_info.setLayout(new GridBagLayout());
 				GridBagConstraints c = new GridBagConstraints();
 				c.fill = GridBagConstraints.CENTER;

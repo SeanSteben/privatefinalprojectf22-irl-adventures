@@ -12,10 +12,10 @@ import javax.swing.*;
 public class TaskWindow extends JFrame implements SubWindow {
 	
 	JPanel task_area = new JPanel();
-	JButton task1 = new JButton();
-	JButton task2 = new JButton();
-	JButton task3 = new JButton();
-	JButton task4 = new JButton();
+	static JButton task1 = new JButton();
+	static JButton task2 = new JButton();
+	static JButton task3 = new JButton();
+	static JButton task4 = new JButton();
 	public TaskWindow(String stat) {
 		int PANEL_WIDTH = 100;
 		int PANEL_HEIGHT = 150;

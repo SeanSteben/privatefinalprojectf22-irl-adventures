@@ -25,7 +25,7 @@ public class TaskSubmition extends JFrame implements SubWindow {
 	    b2 = new JButton ("Submit");
 	    b2.setBackground(new Color(212,175,55));
 		b2.setForeground(new Color(146,0,10));
-	    b2.addActionListener(new buttonListener());
+	    b2.addActionListener(new ButtonListener());
 	    
 	    //Create a panel for each part of the frame as to control what goes where
 	    JPanel n = new JPanel(); // for the north part

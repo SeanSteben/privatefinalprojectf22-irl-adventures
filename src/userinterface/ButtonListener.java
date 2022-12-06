@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class buttonListener implements ActionListener {
+public class ButtonListener implements ActionListener {
 	int mins;
 	String type;
 
@@ -36,14 +36,14 @@ public class buttonListener implements ActionListener {
 		} else if (b.equals(CharacterScreen.kindness_button)) {
 			TaskWindowCreator taskwind = new TaskWindowCreator("Kindness");
 			type = "Kindness";
-		} else if (b.equals(Task_Window.task1)) {
-			TaskSubmitionCreator submitWindow = new TaskSubmitionCreator(Task_Window.task1.getText());
-		} else if (b.equals(Task_Window.task2)) {
-			TaskSubmitionCreator submitWindow = new TaskSubmitionCreator(Task_Window.task2.getText());
-		} else if (b.equals(Task_Window.task3)) {
-			TaskSubmitionCreator submitWindow = new TaskSubmitionCreator(Task_Window.task3.getText());
-		} else if (b.equals(Task_Window.task4)) {
-			TaskSubmitionCreator submitWindow = new TaskSubmitionCreator(Task_Window.task4.getText());
+		} else if (b.equals(TaskWindow.task1)) {
+			TaskSubmitionCreator submitWindow = new TaskSubmitionCreator(TaskWindow.task1.getText());
+		} else if (b.equals(TaskWindow.task2)) {
+			TaskSubmitionCreator submitWindow = new TaskSubmitionCreator(TaskWindow.task2.getText());
+		} else if (b.equals(TaskWindow.task3)) {
+			TaskSubmitionCreator submitWindow = new TaskSubmitionCreator(TaskWindow.task3.getText());
+		} else if (b.equals(TaskWindow.task4)) {
+			TaskSubmitionCreator submitWindow = new TaskSubmitionCreator(TaskWindow.task4.getText());
 		} else if (b.equals(TaskSubmition.b2)) {
 			mins = Integer.parseInt(TaskSubmition.minst.getText());
 			System.out.println(mins);
