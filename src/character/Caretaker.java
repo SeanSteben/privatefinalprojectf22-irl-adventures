@@ -55,6 +55,7 @@ public class Caretaker {
 
 	}
 	
+	//Checks if there is a saved file so Driver class knows if a name should be asked for.
 	public boolean isFirstGame() {
 		if (save.length() == 0) {
 			return true;

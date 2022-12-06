@@ -104,8 +104,6 @@ public class Character {
 	
 	//Takes values from last saved Memento object and sets them as the current stats.
 	public void load(String data) {
-		System.out.println(data);
-		
 		String s[] = data.split("\t");
 		
 		name = s[0];
@@ -117,7 +115,7 @@ public class Character {
 		wisdom = Integer.parseInt(s[6]);
 		charisma = Integer.parseInt(s[7]);
 		kindness = Integer.parseInt(s[8]);
-		time = Integer.parseInt(s[9]);
+		//time = Integer.parseInt(s[9]);
 	}
 
 	
