@@ -2,6 +2,7 @@ package irlpackage;
 import java.util.Scanner;
 import character.Character;
 import character.Caretaker;
+import userinterface.CharacterScreen;
 
 /**
  * @author Sean Steben
@@ -24,6 +25,7 @@ public class Driver {
 			player.changeName(scan.next());
 		}
 
+		CharacterScreen gui = new CharacterScreen(player);
 		
 		PlayerDay myDay = new PlayerDay();
 		new RandomEventObserver(myDay);
