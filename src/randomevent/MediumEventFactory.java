@@ -1,5 +1,11 @@
 package randomevent;
 
+/**
+ * Creates medium events based off of the integer passed into the getEvent method call. Used by MakeEvent class, getEvent is called in RandomEvent class.
+ * @author Dylan
+ *
+ */
+
 public class MediumEventFactory implements AbstractFactory{
 
 	public MediumEventFactory(){

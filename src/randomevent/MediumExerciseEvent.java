@@ -1,6 +1,12 @@
 package randomevent;
 import character.Character;
 
+/**
+ * Creates a medium event that checks the character's strength, dexterity, and constitution stats. Levels the character up if the stats are high enough.
+ * @author Dylan
+ *
+ */
+
 public class MediumExerciseEvent implements Event{
 
 	Character player = Character.getInstance();

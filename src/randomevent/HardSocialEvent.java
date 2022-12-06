@@ -1,6 +1,12 @@
 package randomevent;
 import character.Character;
 
+/**
+ * Creates a hard event that checks the character's charisma and kindness stats. Levels the character up if the stats are high enough.
+ * @author Dylan
+ *
+ */
+
 public class HardSocialEvent implements Event{
 
 	Character player = Character.getInstance();

@@ -1,13 +1,14 @@
 package randomevent;
 import java.util.Random;
 
-
+/**
+ * Creates a different event factory based off of the character's level.
+ * @author Dylan
+ *
+ */
 
 public class MakeEvent {
 
-	Random rand = new Random();
-	int type = rand.nextInt(3);
-	
 	public static AbstractFactory getFactory(int level) {
 		if(level < 10) {
 			return new EasyEventFactory();

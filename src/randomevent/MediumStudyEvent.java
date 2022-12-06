@@ -1,6 +1,12 @@
 package randomevent;
 import character.Character;
 
+/**
+ * Creates a medium event that checks the character's intelligence and wisdom stats. Levels the character up if the stats are high enough.
+ * @author Dylan
+ *
+ */
+
 public class MediumStudyEvent implements Event{
 
 	Character player = Character.getInstance();
