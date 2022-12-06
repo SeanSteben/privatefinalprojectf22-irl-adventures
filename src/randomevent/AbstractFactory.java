@@ -1,7 +1,7 @@
 package randomevent;
 
 
-public abstract class AbstractFactory {
+public interface AbstractFactory {
 
 	abstract Event getEvent(int type);
 	

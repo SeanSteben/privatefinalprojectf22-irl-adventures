@@ -1,6 +1,6 @@
 package randomevent;
 
-public class HardEventFactory extends AbstractFactory{
+public class HardEventFactory implements AbstractFactory{
 
 	public HardEventFactory() {
 		
