@@ -21,6 +21,10 @@ public class Character {
 	private int constitution;
 	private int kindness;
 
+
+
+	private int time;
+	
 	//Private constructor to ensure that only this class can create a Character.
 	private Character() {
 		name = null;
@@ -32,16 +36,19 @@ public class Character {
 		charisma = 10;
 		constitution = 10;
 		kindness = 10;
+		time = 480;//8 hours in minutes
 	}
 
 	//Allows other classes to interact with single Character, creates one if it doesn't already exist.
 	public static Character getInstance() {
+
+		
 		if (player == null) {
 			player = new Character();
 		}
 		return player;
 	}
-
+	
 	//Access methods that return the current value of each stat.
 	public String getName() {return name;}
 	
@@ -60,6 +67,8 @@ public class Character {
 	public int getCon() {return constitution;}
 
 	public int getKnd() {return kindness;}
+	
+	public int getTime() {return time;}
 
 	//Adds a certain value to the current stat value.
 	public void changeName(String newName) {name = newName;}
@@ -78,7 +87,15 @@ public class Character {
 
 	public void addKnd(int amt) {kindness += amt;}
 	
+	public void removeTime(int inTime) {
+		time -= inTime;
+	}
+	public void resetTime(){
+		time =  480;
+	}
+	
 	public void levelUp() {level++;}
+	
 	
 	//Creates a Memento object using the character's current stats .
 	public Memento save() {
@@ -86,16 +103,19 @@ public class Character {
 	}
 	
 	//Takes values from last saved Memento object and sets them as the current stats.
-	public void load(Memento lastSave) {
-		name = lastSave.getName();
-		level = lastSave.getLevel();
-		strength = lastSave.getStr();
-		dexterity = lastSave.getDex();
-		intelligence = lastSave.getIntel();
-		constitution = lastSave.getCon();
-		wisdom = lastSave.getWis();
-		charisma = lastSave.getChr();
-		kindness = lastSave.getKnd();
+	public void load(String data) {
+		String s[] = data.split("\t");
+		
+		name = s[0];
+		level = Integer.parseInt(s[1]);
+		strength = Integer.parseInt(s[2]);
+		dexterity = Integer.parseInt(s[3]);
+		intelligence = Integer.parseInt(s[4]);
+		constitution = Integer.parseInt(s[5]);
+		wisdom = Integer.parseInt(s[6]);
+		charisma = Integer.parseInt(s[7]);
+		kindness = Integer.parseInt(s[8]);
+		//time = Integer.parseInt(s[9]);
 	}
 
 	
@@ -108,8 +128,7 @@ public class Character {
 	class Memento{
 
 		private String name;
-		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness;
-		private Character player  = Character.getInstance();
+		private int level, strength, intelligence, dexterity, constitution, wisdom, charisma, kindness, time;
 		
 		//Memento constructor that takes a copy of the current character stats
 		private Memento() {
@@ -122,26 +141,14 @@ public class Character {
 			this.wisdom = player.getWis();
 			this.charisma = player.getChr();
 			this.kindness = player.getKnd();
+			this.time = player.getTime();
 		}
 		
-		//Accessor methods for the Memento object's stats
-		private String getName() {return name;}
-		
-		private int getLevel() {return level;}
-		
-		private int getStr() {return strength;}
-		
-		private int getDex() {return dexterity;}
-		
-		private int getIntel() {return intelligence;}
-		
-		private int getWis() {return wisdom;}
-		
-		private int getChr() {return charisma;}
-		
-		private int getCon() {return constitution;}
-		
-		private int getKnd() {return kindness;}
+		public String toString() {
+			return (name + "\t" + level + "\t" + strength + "\t" + dexterity + "\t" + intelligence +
+					"\t" + constitution + "\t" + wisdom + "\t" + charisma + "\t" + kindness + "\t" + time);
+		}
+
 		
 	}
 }
